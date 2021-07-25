@@ -13,11 +13,10 @@ resource "aws_instance" "myawsserver" {
 }
 
 module "vpc" {
-source = "./app1-vpc/"
+source = "./modules/app1-vpc"
 vpc = "gd-vpc"
 }
 
 output "myawsserver-ip" {
   value = aws_instance.myawsserver.public_ip
 }
-
